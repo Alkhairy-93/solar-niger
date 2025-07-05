@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "products"
+    label: "Produits"
+    folder: "src/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ID", name: "id", widget: "number" }
+      - { label: "Nom", name: "name", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["kit", "panel", "battery", "converter"] }
+      - { label: "Marque", name: "brand", widget: "select", options: ["SAKO", "Felicity", "SOL", "Autre"] }
+      - { label: "Prix (FCFA)", name: "price", widget: "number" }
+      - { label: "Puissance (W)", name: "power", widget: "number", required: false }
+      - { label: "Capacité (Ah)", name: "capacity", widget: "number", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Efficacité", name: "efficiency", widget: "string", required: false }
+      - { label: "Garantie", name: "warranty", widget: "string", required: false }
+      - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+      - { label: "Poids", name: "weight", widget: "string", required: false }
+      - label: "Composants du kit"
+        name: "kitComponents"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Nom de l'option", name: "optionName", widget: "string", default: "Option" }
+          - { label: "Nombre de panneaux", name: "panelCount", widget: "number", default: 1 }
+          - { label: "Type de panneau", name: "panelType", widget: "string", default: "Monocristallin" }
+          - { label: "Puissance par panneau (W)", name: "panelPower", widget: "number", default: 100 }
+          - { label: "Capacité de la batterie (Ah)", name: "batteryCapacity", widget: "number", default: 50 }
+          - { label: "Puissance du convertisseur (VA)", name: "converterPower", widget: "number", default: 500 }
+          - { label: "Prix pour cette option (FCFA)", name: "price", widget: "number", default: 0 }
