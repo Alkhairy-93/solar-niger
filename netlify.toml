@@ -1,3 +1,4 @@
 [build]
-  command = "node generate-products-json.js && echo 'Build complet'"
+  base = "."  # stay in the solar-niger root
+  command = "node generate-products-json.js && echo 'Build complete'"
   publish = "public"
