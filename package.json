@@ -1,0 +1,14 @@
+{
+  "name": "solar-niger",
+  "version": "1.0.0",
+  "description": "Projet de génération de produits solaires pour Netlify",
+  "main": "generate-products-json.js",
+  "scripts": {
+    "build": "node generate-products-json.js && echo 'Build complete'"
+  },
+  "author": "Mohamed Aboubacar Souleymane",
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
