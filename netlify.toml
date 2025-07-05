@@ -1,4 +1,7 @@
 [build]
-  base = "."  # stay in the solar-niger root
-  command = "node generate-products-json.js && echo 'Build complete'"
+  base = "."
+  command = "npm run build"
   publish = "public"
+
+[context.production.environment]
+  NODE_VERSION = "18"
