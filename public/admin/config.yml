@@ -10,7 +10,7 @@ collections:
     label: "Produits"
     folder: "src/products"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name | slugify}}"  #  génère ex: duo-max.md 
     fields:
       - { label: "ID", name: "id", widget: "number" }
       - { label: "Nom", name: "name", widget: "string" }
