@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Kit solaire basique",
+    "type": "kit",
+    "brand": "SAKO",
+    "price": 150000,
+    "power": 300,
+    "capacity": 200,
+    "description": "Un kit solaire basique et fiable.",
+    "image": "/img/kit-solaire-basique.jpg",
+    "efficiency": "85%",
+    "warranty": "2 ans",
+    "dimensions": "100x50x30 cm",
+    "weight": "12 kg",
+    "kitComponents": [
+      {
+        "optionName": "Option 1",
+        "panelCount": 4,
+        "panelType": "Monocristallin",
+        "panelPower": 75,
+        "batteryCapacity": 150,
+        "converterPower": 500,
+        "price": 50000
+      },
+      {
+        "optionName": "Option 2",
+        "panelCount": 2,
+        "panelType": "Polycristallin",
+        "panelPower": 100,
+        "batteryCapacity": 100,
+        "converterPower": 300,
+        "price": 30000
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Panneau solaire performant",
+    "type": "panel",
+    "brand": "Felicity",
+    "price": 120000,
+    "power": 250,
+    "capacity": null,
+    "description": "Panneau solaire haute efficacité pour installations domestiques.",
+    "image": "/img/panneau-solaire.jpg",
+    "efficiency": "90%",
+    "warranty": "3 ans",
+    "dimensions": "150x70x5 cm",
+    "weight": "8 kg",
+    "kitComponents": []
+  }
+]
