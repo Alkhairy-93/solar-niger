@@ -1,0 +1,27 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Kit Solaire 300W",
+      "type": "kit",
+      "brand": "SAKO",
+      "price": 350000,
+      "power": 300,
+      "battery": "100Ah Gel",
+      "description": "Kit solaire complet pour usage domestique",
+      "image": "/images/kit-solaire-300w.jpg",
+      "warranty": "2 ans"
+    },
+    {
+      "id": 2,
+      "name": "Panneau 150W Mono",
+      "type": "panel",
+      "brand": "Felicity",
+      "price": 125000,
+      "power": 150,
+      "description": "Panneau solaire monocristallin haute efficacité",
+      "image": "/images/panneau-150w.jpg",
+      "warranty": "5 ans"
+    }
+  ]
+}
