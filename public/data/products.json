@@ -22,6 +22,18 @@
       "image": "/images/panneau-150w.jpg",
       "warranty": "5 ans",
       "description": "Panneau solaire monocristallin haute efficacité"
+    },
+    {
+      "power": 4000,
+      "brand": "SAKO",
+      "price": 400000,
+      "name": "KIT B",
+      "capacity": "",
+      "type": "kit",
+      "id": 3,
+      "image": "/img/Kit Solaire 300W.jpg",
+      "warranty": "5",
+      "description": "KI"
     }
   ]
 }
