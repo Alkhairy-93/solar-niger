@@ -38,15 +38,15 @@
     },
     {
       "brand": "SAKO",
-      "price": 120000,
+      "price": 160000,
       "name": "batterie gel 200 ah",
       "capacity": 200,
       "type": "battery",
       "id": 4,
-      "image": "/img/batterie-ge.jpg",
+      "image": "/img/batterie-gel-200.jpg",
       "warranty": "no",
       "description": "batterie gel",
-      "voltage": 160000
+      "voltage": 12
     }
   ]
 }
