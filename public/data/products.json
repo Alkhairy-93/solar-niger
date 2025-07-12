@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "power": 300,
+      "power": "",
       "brand": "SAKO",
-      "price": 350000,
-      "name": "Kit Solaire RR",
+      "price": 100000,
+      "name": "Batterie gel 100 ah",
       "battery": "100Ah Gel",
-      "type": "kit",
+      "type": "battery",
       "id": 1,
-      "image": "/images/kit-solaire-300w.jpg",
-      "warranty": "2 ans",
-      "description": "Kit solaire complet pour usage domestique"
+      "image": "/img/sako.jpg",
+      "warranty": "No",
+      "description": "batterie gel "
     },
     {
       "power": 150,
