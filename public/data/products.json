@@ -35,6 +35,18 @@
       "image": "/img/Kit Solaire 300W.jpg",
       "warranty": "5",
       "description": "KI"
+    },
+    {
+      "brand": "SAKO",
+      "price": 120000,
+      "name": "batterie gel 200 ah",
+      "capacity": 200,
+      "type": "battery",
+      "id": 4,
+      "image": "/img/Kit Solaire 300W.jpg",
+      "warranty": "no",
+      "description": "batterie gel",
+      "voltage": 12
     }
   ]
 }
