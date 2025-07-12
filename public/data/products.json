@@ -6,9 +6,10 @@
       "price": 100000,
       "name": "Batterie gel 100 ah",
       "battery": "100Ah Gel",
+      "capacity": 100,
       "type": "battery",
       "id": 1,
-      "image": "/img/batterie-gel-100-ah.jpg",
+      "image": "/img/duo-max-250w.jpg",
       "warranty": "No",
       "description": "batterie gel "
     },
