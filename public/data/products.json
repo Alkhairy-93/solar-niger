@@ -55,12 +55,13 @@
       "brand": "Felicity",
       "price": 260000,
       "name": "ONDULEUR HYBRIDE 3KVA-24v (felicity)",
+      "inputVoltage": 24,
       "type": "converter",
       "id": 5,
       "image": "/img/6-a5ec_1 - Copie.jpg",
       "warranty": "NO",
       "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
-      "voltage": 24
+      "voltage": ""
     },
     {
       "power": 5000,
