@@ -11,7 +11,8 @@
       "id": 1,
       "image": "/img/Batterie gel 100 ah.jpg",
       "warranty": "No",
-      "description": "batterie gel "
+      "description": "batterie gel ",
+      "voltage": 24
     },
     {
       "power": 150,
