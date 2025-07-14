@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "power": "",
+      "brand": "SAKO",
+      "price": 100000,
+      "name": "Batterie gel 100 ah (sako)",
+      "battery": "100Ah Gel",
+      "capacity": 100,
+      "type": "battery",
+      "id": 1,
+      "image": "/img/Batterie gel 100 ah.jpg",
+      "warranty": "No",
+      "description": "batterie gel "
+    },
+    {
+      "power": 150,
+      "brand": "Felicity",
+      "price": 125000,
+      "name": "Panneau 150W Mono",
+      "type": "panel",
+      "id": 2,
+      "image": "/images/panneau-150w.jpg",
+      "warranty": "5 ans",
+      "description": "Panneau solaire monocristallin haute efficacité"
+    },
+    {
+      "power": 1000,
+      "brand": "Felicity",
+      "price": 130000,
+      "name": "ONDULEUR HYBRIDE 1KVA-12V (felicity)",
+      "dimensions": "",
+      "capacity": "",
+      "type": "converter",
+      "id": 3,
+      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "warranty": "NO",
+      "description": "Alterne entre batterie 12V et Nigelec \n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n\n\n",
+      "voltage": 12
+    },
+    {
+      "brand": "SAKO",
+      "price": 160000,
+      "name": "batterie gel 200 ah (sako)",
+      "capacity": 200,
+      "type": "battery",
+      "id": 4,
+      "image": "/img/Batterie gel 200.jpg",
+      "warranty": "no",
+      "description": "batterie gel",
+      "voltage": 12
+    },
+    {
+      "power": 3000,
+      "brand": "Felicity",
+      "price": 260000,
+      "name": "ONDULEUR HYBRIDE 3KVA-24v (felicity)",
+      "type": "converter",
+      "id": 5,
+      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "warranty": "NO",
+      "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
+      "voltage": 24
+    },
+    {
+      "power": 5000,
+      "brand": "Felicity",
+      "price": 310000,
+      "name": "ONDULEUR HYBRIDE 5KVA-24V (felicity)",
+      "type": "converter",
+      "id": 6,
+      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "warranty": "NO",
+      "description": "Alterne entre batterie 24v et courant Nigelec\n\n Utilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation."
+    },
+    {
+      "power": "",
+      "brand": "SAKO",
+      "price": 1150000,
+      "name": "BATTERIE LITHIUM LIFE PO4 10KWA-48V (sako)",
+      "capacity": 210,
+      "type": "battery",
+      "id": 7,
+      "image": "/img/screenshot_20241030-112609_1_1.png",
+      "warranty": "NO",
+      "description": " longévité allant jusqu’à 15 ans, charge rapide et stable,  faible taux d’auto-décharge , écologique et sans entretien est idéale pour les applications solaires domestiques et commerciales.\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.",
+      "voltage": 48
+    }
+  ]
+}
