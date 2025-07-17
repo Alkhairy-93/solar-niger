@@ -87,6 +87,18 @@
       "warranty": "NO",
       "description": " longévité allant jusqu’à 15 ans, charge rapide et stable,  faible taux d’auto-décharge , écologique et sans entretien est idéale pour les applications solaires domestiques et commerciales.\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.",
       "voltage": 48
+    },
+    {
+      "power": "",
+      "brand": "Autre",
+      "price": 500000,
+      "name": "VENTILO SOLAIRE",
+      "capacity": "",
+      "type": "other",
+      "id": 8,
+      "image": "/img/Batterie gel 100 ah.jpg",
+      "warranty": "5",
+      "description": "FRIGO"
     }
   ]
 }
