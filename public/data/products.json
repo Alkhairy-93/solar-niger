@@ -31,13 +31,14 @@
       "price": 130000,
       "name": "ONDULEUR HYBRIDE 1KVA-12V (felicity)",
       "dimensions": "",
+      "inputVoltage": 12,
       "capacity": "",
       "type": "converter",
       "id": 3,
       "image": "/img/6-a5ec_1 - Copie.jpg",
       "warranty": "NO",
       "description": "Alterne entre batterie 12V et Nigelec \n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n\n\n",
-      "voltage": 12
+      "voltage": ""
     },
     {
       "brand": "SAKO",
