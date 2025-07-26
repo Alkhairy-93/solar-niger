@@ -69,6 +69,7 @@
       "brand": "Felicity",
       "price": 310000,
       "name": "ONDULEUR HYBRIDE 5KVA-24V (felicity)",
+      "inputVoltage": 24,
       "type": "converter",
       "id": 6,
       "image": "/img/6-a5ec_1 - Copie.jpg",
