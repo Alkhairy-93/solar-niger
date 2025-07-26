@@ -25,7 +25,7 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "number", value_type: "int" }
               - { label: "Nom", name: "name", widget: "string" }
-              - { label: "Type", name: "type", widget: "select", options: ["kit", "panel", "battery", "converter"] }
+              - { label: "Type", name: "type", widget: options: ["kit", "panel", "battery", "converter"] }
               - { label: "Marque", name: "brand", widget: "select", options: ["SAKO", "Felicity", "SOL", "Autre"] }
               - { label: "Prix (FCFA)", name: "price", widget: "number", value_type: "int" }
               - { label: "Puissance (W)", name: "power", widget: "number", required: false, value_type: "int" }
