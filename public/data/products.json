@@ -92,11 +92,11 @@
     },
     {
       "power": "",
-      "brand": "Autre",
+      "brand": "resta solar",
       "price": 500000,
       "name": "VENTILO SOLAIRE",
       "capacity": "",
-      "type": "other",
+      "type": "battery",
       "id": 8,
       "image": "/img/Batterie gel 100 ah.jpg",
       "warranty": "5",
