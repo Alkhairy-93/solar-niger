@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "products"
+    label: "Produits"
+    files:
+      - file: "public/data/products.json"
+        label: "Produits"
+        name: "products"
+        create: true
+        delete: true
+        extension: "json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - name: "products"
+            label: "Produits"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Type", name: "type", widget: "select", options: ["kit", "panel", "battery", "converter"] }
+              - { label: "Marque", name: "brand", widget: "string" }
+              - { label: "Prix (FCFA)", name: "price", widget: "number", value_type: "int" }
+              - { label: "Puissance (W)", name: "power", widget: "number", required: false, value_type: "int" }
+              - { label: "Capacité (Ah)", name: "capacity", widget: "number", required: false, value_type: "int" }
+              - { label: "Tension (V)", name: "voltage", widget: "number", required: false, value_type: "int" }
+              - { label: "Tension d'entrée (V)", name: "inputVoltage", widget: "number", required: false, value_type: "int" }
+              - { label: "Batterie incluse", name: "battery", widget: "string", required: false }
+              - { label: "Garantie", name: "warranty", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+              - { label: "Poids (kg)", name: "weight", widget: "number", required: false, value_type: "float" }
+              - { label: "Efficacité", name: "efficiency", widget: "number", required: false, value_type: "float" }
