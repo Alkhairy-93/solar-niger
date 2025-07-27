@@ -16,17 +16,6 @@
       "voltage": ""
     },
     {
-      "power": 150,
-      "brand": "Felicity",
-      "price": 125000,
-      "name": "Panneau 150W Mono",
-      "type": "panel",
-      "id": 2,
-      "image": "/images/panneau-150w.jpg",
-      "warranty": "5 ans",
-      "description": "Panneau solaire monocristallin haute efficacité"
-    },
-    {
       "power": 3000,
       "brand": "Felicity",
       "price": 260000,
@@ -38,6 +27,17 @@
       "warranty": "NO",
       "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
       "voltage": ""
+    },
+    {
+      "power": 150,
+      "brand": "Felicity",
+      "price": 125000,
+      "name": "Panneau 150W Mono",
+      "type": "panel",
+      "id": 2,
+      "image": "/images/panneau-150w.jpg",
+      "warranty": "5 ans",
+      "description": "Panneau solaire monocristallin haute efficacité"
     },
     {
       "power": 1000,
@@ -68,18 +68,6 @@
       "voltage": 48
     },
     {
-      "power": 5000,
-      "brand": "Felicity",
-      "price": 310000,
-      "name": "ONDULEUR HYBRIDE 5KVA-24V (felicity)",
-      "inputVoltage": 24,
-      "type": "converter",
-      "id": 6,
-      "image": "/img/6-a5ec_1 - Copie.jpg",
-      "warranty": "NO",
-      "description": "Alterne entre batterie 24v et courant Nigelec\n\n Utilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation."
-    },
-    {
       "brand": "SAKO",
       "price": 160000,
       "name": "batterie gel 200 ah (sako)",
@@ -92,16 +80,16 @@
       "voltage": 12
     },
     {
-      "power": "",
-      "brand": "resta solar",
-      "price": 500000,
-      "name": "VENTILO SOLAIRE",
-      "capacity": "",
-      "type": "battery",
-      "id": 8,
-      "image": "/img/Batterie gel 100 ah.jpg",
-      "warranty": "5",
-      "description": "FRIGO"
+      "power": 5000,
+      "brand": "Felicity",
+      "price": 310000,
+      "name": "ONDULEUR HYBRIDE 5KVA-24V (felicity)",
+      "inputVoltage": 24,
+      "type": "converter",
+      "id": 6,
+      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "warranty": "NO",
+      "description": "Alterne entre batterie 24v et courant Nigelec\n\n Utilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation."
     },
     {
       "brand": "Resta solar",
