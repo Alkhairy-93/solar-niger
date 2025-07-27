@@ -6,13 +6,14 @@
       "price": 100000,
       "name": "Batterie gel 100 ah (sako)",
       "battery": "100Ah Gel",
+      "inputVoltage": 12,
       "capacity": 100,
       "type": "battery",
       "id": 1,
-      "image": "/img/Batterie gel 100 ah.jpg",
+      "image": "/img/sako battery 100ah 12 V.jpg",
       "warranty": "No",
       "description": "batterie gel ",
-      "voltage": 24
+      "voltage": ""
     },
     {
       "power": 150,
