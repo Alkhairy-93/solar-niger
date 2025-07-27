@@ -41,18 +41,6 @@
       "voltage": ""
     },
     {
-      "brand": "SAKO",
-      "price": 160000,
-      "name": "batterie gel 200 ah (sako)",
-      "capacity": 200,
-      "type": "battery",
-      "id": 4,
-      "image": "/img/Batterie gel 200.jpg",
-      "warranty": "no",
-      "description": "batterie gel",
-      "voltage": 12
-    },
-    {
       "power": 3000,
       "brand": "Felicity",
       "price": 260000,
@@ -91,6 +79,18 @@
       "voltage": 48
     },
     {
+      "brand": "SAKO",
+      "price": 160000,
+      "name": "batterie gel 200 ah (sako)",
+      "capacity": 200,
+      "type": "battery",
+      "id": 4,
+      "image": "/img/Batterie gel 200.jpg",
+      "warranty": "no",
+      "description": "batterie gel",
+      "voltage": 12
+    },
+    {
       "power": "",
       "brand": "resta solar",
       "price": 500000,
@@ -101,6 +101,18 @@
       "image": "/img/Batterie gel 100 ah.jpg",
       "warranty": "5",
       "description": "FRIGO"
+    },
+    {
+      "brand": "Resta solar",
+      "price": 1800000,
+      "name": "Lithium batterie life po4",
+      "inputVoltage": 48,
+      "capacity": 312,
+      "type": "battery",
+      "id": 9,
+      "image": "/img/SUNPOLO-6KW-01.jpg",
+      "warranty": "5 ans",
+      "description": "Batterie LiFePO₄ Resta Solar : légère, durable (10 à 15 ans), sans entretien, garantie 5 ans.\n\n"
     }
   ]
 }
