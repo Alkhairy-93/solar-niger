@@ -26,6 +26,19 @@
       "description": "Panneau solaire monocristallin haute efficacité"
     },
     {
+      "power": 3000,
+      "brand": "Felicity",
+      "price": 260000,
+      "name": "ONDULEUR HYBRIDE 3KVA-24v (felicity)",
+      "inputVoltage": 24,
+      "type": "converter",
+      "id": 5,
+      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "warranty": "NO",
+      "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
+      "voltage": ""
+    },
+    {
       "power": 1000,
       "brand": "Felicity",
       "price": 130000,
@@ -41,17 +54,17 @@
       "voltage": ""
     },
     {
-      "power": 3000,
-      "brand": "Felicity",
-      "price": 260000,
-      "name": "ONDULEUR HYBRIDE 3KVA-24v (felicity)",
-      "inputVoltage": 24,
-      "type": "converter",
-      "id": 5,
-      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "power": "",
+      "brand": "SAKO",
+      "price": 1150000,
+      "name": "BATTERIE LITHIUM LIFE PO4 10KWA-48V (sako)",
+      "capacity": 210,
+      "type": "battery",
+      "id": 7,
+      "image": "/img/screenshot_20241030-112609_1_1.png",
       "warranty": "NO",
-      "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
-      "voltage": ""
+      "description": " longévité allant jusqu’à 15 ans, charge rapide et stable,  faible taux d’auto-décharge , écologique et sans entretien est idéale pour les applications solaires domestiques et commerciales.\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.",
+      "voltage": 48
     },
     {
       "power": 5000,
@@ -64,19 +77,6 @@
       "image": "/img/6-a5ec_1 - Copie.jpg",
       "warranty": "NO",
       "description": "Alterne entre batterie 24v et courant Nigelec\n\n Utilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation."
-    },
-    {
-      "power": "",
-      "brand": "SAKO",
-      "price": 1150000,
-      "name": "BATTERIE LITHIUM LIFE PO4 10KWA-48V (sako)",
-      "capacity": 210,
-      "type": "battery",
-      "id": 7,
-      "image": "/img/screenshot_20241030-112609_1_1.png",
-      "warranty": "NO",
-      "description": " longévité allant jusqu’à 15 ans, charge rapide et stable,  faible taux d’auto-décharge , écologique et sans entretien est idéale pour les applications solaires domestiques et commerciales.\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.",
-      "voltage": 48
     },
     {
       "brand": "SAKO",
@@ -105,12 +105,12 @@
     {
       "brand": "Resta solar",
       "price": 1800000,
-      "name": "Lithium batterie life po4",
+      "name": "Lithium batterie life po4 ",
       "inputVoltage": 48,
       "capacity": 312,
       "type": "battery",
       "id": 9,
-      "image": "/img/SUNPOLO-6KW-01.jpg",
+      "image": "/img/restar lithuim battery.jpg",
       "warranty": "5 ans",
       "description": "Batterie LiFePO₄ Resta Solar : légère, durable (10 à 15 ans), sans entretien, garantie 5 ans.\n\n"
     }
