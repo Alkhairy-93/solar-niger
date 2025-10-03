@@ -1,0 +1,100 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "SolarNiger - Solutions Solaires & Simulateur Énergétique",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "SolarNiger",
+  "start_url": "/",
+  "theme_color": "#0aad8e",
+  "description": "Comparez, simulez, économisez : trouvez la meilleure solution énergétique pour votre foyer ou entreprise au Niger.",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://solar-niger.netlify.app/",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Comparateur",
+      "short_name": "Comparer",
+      "description": "Comparez les produits solaires",
+      "url": "/#products",
+      "icons": [
+        {
+          "src": "https://solar-niger.netlify.app/",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Simulateur",
+      "short_name": "Simuler",
+      "description": "Calculez vos besoins énergétiques",
+      "url": "/#calculator",
+      "icons": [
+        {
+          "src": "https://solar-niger.netlify.app/",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "id": "/?source=pwa",
+  "lang": "fr",
+  "display_override": ["window-controls-overlay"]
+}
