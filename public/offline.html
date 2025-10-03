@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hors ligne - SolarNiger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0aad8e, #0d6efd);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+        }
+
+        .logo h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+        }
+
+        .logo span {
+            color: #ff6b00;
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ff6b00;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 15px;
+            border-radius: 8px;
+        }
+
+        .feature i {
+            color: #ff6b00;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .btn {
+            background: white;
+            color: #0aad8e;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .online {
+            color: #4ade80;
+        }
+
+        .offline {
+            color: #f87171;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-solar-panel"></i>
+            <h1>SOLAR<span>NIGER</span></h1>
+        </div>
+        
+        <div class="icon">
+            <i class="fas fa-wifi-slash"></i>
+        </div>
+        
+        <h1>Connexion perdue</h1>
+        
+        <p>Vous êtes actuellement hors ligne. SolarNiger a besoin d'une connexion Internet pour accéder au catalogue complet et au simulateur énergétique.</p>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-info-circle"></i>
+                <span>Vérifiez votre connexion Internet</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Assurez-vous que les données mobiles sont activées</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-wifi"></i>
+                <span>Vérifiez votre connexion Wi-Fi</span>
+            </div>
+        </div>
+
+        <div class="status">
+            <div class="connection-status offline">
+                <i class="fas fa-circle"></i>
+                <span>Statut: Hors ligne</span>
+            </div>
+            <div>L'application se reconnectera automatiquement</div>
+        </div>
+        
+        <button class="btn" onclick="window.location.reload()">
+            <i class="fas fa-redo"></i>
+            Réessayer la connexion
+        </button>
+    </div>
+
+    <script>
+        // Vérifier périodiquement la connexion
+        function checkConnection() {
+            if (navigator.onLine) {
+                window.location.reload();
+            }
+        }
+
+        // Vérifier toutes les 5 secondes
+        setInterval(checkConnection, 5000);
+
+        // Écouter les événements de connexion
+        window.addEventListener('online', () => {
+            document.querySelector('.connection-status').innerHTML = `
+                <i class="fas fa-circle online"></i>
+                <span>Statut: En ligne - Reconnexion...</span>
+            `;
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        });
+
+        window.addEventListener('offline', () => {
+            document.querySelector('.connection-status').innerHTML = `
+                <i class="fas fa-circle offline"></i>
+                <span>Statut: Hors ligne</span>
+            `;
+        });
+    </script>
+</body>
+</html>
