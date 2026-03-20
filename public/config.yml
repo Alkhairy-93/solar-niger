@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "products"
+    label: "Produits"
+    files:
+      - file: "public/data/products.json"
+        label: "Produits"
+        name: "products"
+        create: true
+        delete: true
+        extension: "json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - name: "products"
+            label: "Liste des produits"
+            widget: "list"
+            summary: "{{fields.name}} ({{fields.type}})"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "Nom", name: "name", widget: "string" }
+              - { 
+                  label: "Type de produit", 
+                  name: "type", 
+                  widget: "select", 
+                  options: [
+                    { label: "Kit solaire complet", value: "kit" },
+                    { label: "Panneau solaire", value: "panel" },
+                    { label: "Batterie", value: "battery" },
+                    { label: "Convertisseur / Onduleur", value: "converter" },
+                    { label: "Accessoire", value: "accessory" },
+                    { label: "Électroménager", value: "appliance" },
+                    { label: "Lampe / Pompe solaire", value: "lamp-pump" }
+                  ]
+                }
+              - { label: "Marque", name: "brand", widget: "string" }
+              - { label: "Ville", name: "city", widget: "string", required: false, hint: "Ex : Niamey, Agadez..." }
+              - { label: "Prix (FCFA)", name: "price", widget: "number", value_type: "int" }
+              # Champs spécifiques selon le type
+              - { label: "Puissance (W)", name: "power", widget: "number", required: false, value_type: "int", hint: "Panneaux, kits, appareils" }
+              - { label: "Capacité (Ah)", name: "capacity", widget: "number", required: false, value_type: "int", hint: "Pour les batteries" }
+              - { label: "Tension (V)", name: "voltage", widget: "number", required: false, value_type: "int", hint: "Pour batteries et kits" }
+              - { label: "Tension d'entrée (V)", name: "inputVoltage", widget: "number", required: false, value_type: "int", hint: "Pour convertisseurs" }
+              - { label: "Batterie incluse", name: "battery", widget: "string", required: false, hint: "Ex : 200Ah AGM" }
+              - { label: "Capacité batterie (Ah)", name: "batteryCapacity", widget: "number", required: false, value_type: "int", hint: "Pour les kits complets" }
+              - { label: "Puissance convertisseur (W)", name: "converterPower", widget: "number", required: false, value_type: "int", hint: "Pour les kits complets" }
+              - { label: "Caractéristique spécifique", name: "specification", widget: "string", required: false, hint: "Pour les accessoires ou autres" }
+              - { label: "Garantie", name: "warranty", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image principale", name: "image", widget: "image" }
+              - { label: "Images supplémentaires", name: "additionalImages", widget: "list", required: false, field: { label: "Image", name: "image", widget: "image" } }
+              - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+              - { label: "Poids (kg)", name: "weight", widget: "number", required: false, value_type: "float" }
+              - { label: "Efficacité (%)", name: "efficiency", widget: "number", required: false, value_type: "float", hint: "Pour panneaux ou convertisseurs" }
