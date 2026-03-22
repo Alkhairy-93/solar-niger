@@ -1138,11 +1138,24 @@
             font-size: 1rem;
         }
         
-        .product-header .price {
-            font-weight: bold;
-            color: var(--secondary);
-            font-size: 0.95rem;
-            margin-top: 5px;
+        /* Nouveau style pour l'analyse dans l'en-tête de comparaison */
+        .product-analysis {
+            font-size: 0.85rem;
+            margin-top: 10px;
+            text-align: left;
+            background: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 8px;
+            width: 100%;
+        }
+        .product-analysis p {
+            margin: 5px 0;
+        }
+        .product-analysis strong {
+            color: var(--primary);
+        }
+        .product-analysis .inconvenient {
+            color: var(--danger);
         }
         
         /* Modal produit (style similaire à la modal de comparaison) */
@@ -1875,7 +1888,7 @@
             </button>
         </div>
 
-        <!-- Tabs Navigation (ajout de Accessoires, Électroménagers et Lampes & Pompes) -->
+        <!-- Tabs Navigation -->
         <div class="tabs">
             <button class="tab-button active" data-tab="panels">
                 <i class="fas fa-solar-panel"></i> Panneaux
@@ -1889,14 +1902,12 @@
             <button class="tab-button" data-tab="kits">
                 <i class="fas fa-cubes"></i> Kits solaires complets
             </button>
-            <!-- Nouveaux onglets -->
             <button class="tab-button" data-tab="accessories">
                 <i class="fas fa-tools"></i> Accessoires
             </button>
             <button class="tab-button" data-tab="appliances">
                 <i class="fas fa-blender"></i> Électroménagers
             </button>
-            <!-- Nouvel onglet : Lampes & Pompes solaires -->
             <button class="tab-button" data-tab="lamp-pump">
                 <i class="fas fa-lightbulb"></i> Lampes & Pompes
             </button>
@@ -1906,7 +1917,6 @@
         <section class="filters-section">
             <h3><i class="fas fa-sliders-h"></i> Filtres de recherche</h3>
             <div class="filter-grid">
-                <!-- Filtre de prix avec deux curseurs -->
                 <div class="filter-group price-range">
                     <label><i class="fas fa-tag"></i> Fourchette de prix (FCFA)</label>
                     <div class="price-inputs">
@@ -1927,21 +1937,16 @@
                     </div>
                 </div>
 
-                <!-- MODIFICATION: Remplacer le select par un input avec datalist -->
                 <div class="filter-group">
                     <label for="brand"><i class="fas fa-tags"></i> Marque</label>
                     <input type="text" id="brand" list="brand-list" placeholder="Toutes les marques">
-                    <datalist id="brand-list">
-                        <!-- Les options seront générées dynamiquement -->
-                    </datalist>
+                    <datalist id="brand-list"></datalist>
                 </div>
                 
                 <div class="filter-group">
                     <label for="city"><i class="fas fa-city"></i> Ville</label>
                     <input type="text" id="city" list="city-list" placeholder="Toutes les villes">
-                    <datalist id="city-list">
-                        <!-- Les options seront générées dynamiquement -->
-                    </datalist>
+                    <datalist id="city-list"></datalist>
                 </div>
                 
                 <div class="filter-group">
@@ -1965,10 +1970,7 @@
                     </select>
                 </div>
             </div>
-            <div class="product-grid" id="product-container">
-                <!-- Les produits seront chargés dynamiquement par JavaScript -->
-            </div>
-            <!-- Conteneur pour le bouton "Voir plus" -->
+            <div class="product-grid" id="product-container"></div>
             <div id="see-more-container"></div>
         </section>
 
@@ -2043,7 +2045,6 @@
                             </select>
                         </div>
                         
-                        <!-- La tension du système sera désormais calculée automatiquement, donc on peut masquer ce champ ou le laiser en lecture seule -->
                         <div class="form-group">
                             <label for="system-voltage"><i class="fas fa-battery-full"></i> Tension du système</label>
                             <select id="system-voltage" disabled>
@@ -2074,7 +2075,6 @@
                     
                     <div id="recommended-kits" class="result-recommendation">
                         <h4>Kits recommandés :</h4>
-                        <!-- Les kits recommandés seront générés ici -->
                     </div>
                 </div>
             </div>
@@ -2089,7 +2089,6 @@
                     <h4>À propos de SolarNiger</h4>
                     <p>Le 1er site e-commerce 100% dédié au solaire au Niger.</p>
                     <div class="social-links">
-                        <!-- Lien Facebook mis à jour -->
                         <a href="https://www.facebook.com/share/1AZ9bvoDtJ/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -2167,22 +2166,20 @@
                 "Dosso": { sunHours: 5.7, solarIrradiance: 5.8 },
                 "Tillabéri": { sunHours: 5.8, solarIrradiance: 5.9 }
             },
-            panelEfficiency: 0.18, // Rendement moyen des panneaux
-            systemEfficiency: 0.85, // Rendement du système
-            batteryDod: 0.5, // Profondeur de décharge des batteries
-            daysAutonomy: 2 // Jours d'autonomie
+            panelEfficiency: 0.18,
+            systemEfficiency: 0.85,
+            batteryDod: 0.5,
+            daysAutonomy: 2
         };
         
         // Variables de pagination
         let currentPage = 1;
         const productsPerPage = 4;
         
-        // Obtenir le nom complet de la marque
         function getBrandFullName(brandCode) {
             return brandCode;
         }
         
-        // Obtenir le type de produit
         function getProductType(type) {
             const types = {
                 "kit": "Kit solaire complet",
@@ -2196,18 +2193,14 @@
             return types[type] || type;
         }
         
-        // Vérifier si l'utilisateur est sur mobile
         function isMobileDevice() {
             return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
         }
         
-        // Charger les produits depuis le fichier JSON
         async function loadProducts() {
             try {
                 const response = await fetch('/data/products.json');
-                if (!response.ok) {
-                    throw new Error('Fichier produits non trouvé');
-                }
+                if (!response.ok) throw new Error('Fichier produits non trouvé');
                 const data = await response.json();
                 products = data.products || [];
                 fuse = new Fuse(products, fuseOptions);
@@ -2223,7 +2216,6 @@
             }
         }
 
-        // Charger les paramètres du site
         async function loadSettings() {
             try {
                 const response = await fetch('/data/settings.json');
@@ -2240,11 +2232,10 @@
             }
         }
 
-        // Remplir la liste des marques dynamiquement
         function populateBrandList() {
             const brandList = document.getElementById('brand-list');
             brandList.innerHTML = '';
-            const uniqueBrands = [...new Set(products.map(product => product.brand))];
+            const uniqueBrands = [...new Set(products.map(p => p.brand))];
             uniqueBrands.forEach(brand => {
                 const option = document.createElement('option');
                 option.value = brand;
@@ -2252,11 +2243,10 @@
             });
         }
 
-        // Remplir la liste des villes dynamiquement
         function populateCityList() {
             const cityList = document.getElementById('city-list');
             cityList.innerHTML = '';
-            const uniqueCities = [...new Set(products.map(product => product.city).filter(city => city))];
+            const uniqueCities = [...new Set(products.map(p => p.city).filter(c => c))];
             uniqueCities.forEach(city => {
                 const option = document.createElement('option');
                 option.value = city;
@@ -2264,7 +2254,6 @@
             });
         }
 
-        // Mettre à jour l'affichage des valeurs des curseurs de prix
         function updatePriceLabels() {
             const minPrice = parseInt(document.getElementById('price-min').value);
             const maxPrice = parseInt(document.getElementById('price-max').value);
@@ -2274,7 +2263,6 @@
             document.getElementById('price-max-display').textContent = maxPrice.toLocaleString('fr-FR');
         }
 
-        // Afficher les produits avec recherche intelligente et pagination
         function displayProducts() {
             const container = document.getElementById('product-container');
             const seeMoreContainer = document.getElementById('see-more-container');
@@ -2452,14 +2440,123 @@
                     const productId = this.dataset.productId;
                     const fullImageUrl = this.dataset.full;
                     const mainImage = document.getElementById(`product-img-${productId}`);
-                    if (mainImage) {
-                        mainImage.src = fullImageUrl;
-                    }
+                    if (mainImage) mainImage.src = fullImageUrl;
                 });
             });
         }
         
-        // Nouvelle fonction pour afficher la modal détaillée du produit
+        // ---------- Analyse des produits pour la comparaison ----------
+        function generateProductAnalysis(product, allCompared) {
+            // Atout et inconvénient par défaut
+            let atout = "";
+            let inconvenient = "";
+            
+            // Comparer les prix
+            const prices = allCompared.map(p => p.price);
+            const minPrice = Math.min(...prices);
+            const maxPrice = Math.max(...prices);
+            if (product.price === minPrice) atout += "💰 Prix le plus bas. ";
+            if (product.price === maxPrice && minPrice !== maxPrice) inconvenient += "💰 Prix le plus élevé. ";
+            
+            // Comparer la puissance (ou capacité selon type)
+            const getPowerVal = (p) => {
+                if (p.type === 'battery') return p.capacity || 0;
+                if (p.type === 'converter') return p.power || 0;
+                return p.power || 0;
+            };
+            const powers = allCompared.map(p => getPowerVal(p));
+            const maxPower = Math.max(...powers);
+            const minPower = Math.min(...powers);
+            const currentPower = getPowerVal(product);
+            if (currentPower === maxPower && maxPower > 0) atout += `⚡ Puissance la plus élevée (${currentPower}${product.type === 'battery' ? 'Ah' : 'W'}). `;
+            if (currentPower === minPower && minPower !== maxPower) inconvenient += `⚡ Puissance la plus faible. `;
+            
+            // Marque / garantie
+            if (product.brand === "Victron Energy" || product.brand === "Sungrow" || product.brand === "Canadian Solar") atout += "🏆 Marque premium reconnue. ";
+            if (product.warranty && parseInt(product.warranty) >= 5) atout += `📅 Garantie ${product.warranty} ans. `;
+            if (product.warranty && parseInt(product.warranty) < 2) inconvenient += `📅 Garantie courte (${product.warranty} ans). `;
+            
+            // Tension système (pertinent pour batteries et convertisseurs)
+            if (product.voltage) {
+                if (product.voltage >= 48) atout += "🔋 Haute tension (moins de pertes). ";
+                else if (product.voltage <= 12) inconvenient += "🔋 Basse tension (pertes plus élevées). ";
+            }
+            
+            // Si aucun atout spécifique n'a été trouvé, en donner un générique
+            if (!atout) atout = "Produit polyvalent.";
+            if (!inconvenient) inconvenient = "Aucun inconvénient majeur relevé.";
+            
+            return { atout, inconvenient };
+        }
+        
+        // Génération du contenu de comparaison (sans le prix dans l'en-tête)
+        function generateCompareContent() {
+            const productsToCompare = compareProducts.map(id => products.find(p => p.id === id));
+            let html = '<table class="compare-table"><thead><tr><th>Caractéristiques</th>';
+            productsToCompare.forEach(product => {
+                const analysis = generateProductAnalysis(product, productsToCompare);
+                html += `
+                    <th class="product-header">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h4>${product.name}</h4>
+                        <div class="product-analysis">
+                            <p><strong><i class="fas fa-thumbs-up"></i> Atout :</strong> ${analysis.atout}</p>
+                            <p class="inconvenient"><strong><i class="fas fa-thumbs-down"></i> Inconvénient :</strong> ${analysis.inconvenient}</p>
+                        </div>
+                    </th>
+                `;
+            });
+            html += '</tr></thead><tbody>';
+            
+            // Fonction pour ajouter une ligne
+            const addRow = (label, getValue) => {
+                html += '<tr><td><strong>' + label + '</strong></td>';
+                productsToCompare.forEach(product => {
+                    let value = getValue(product);
+                    if (value === undefined || value === null || value === '') value = 'N/A';
+                    if (typeof value === 'number' && label.includes('Prix')) value = value.toLocaleString('fr-FR') + ' FCFA';
+                    html += `<td>${value}</td>`;
+                });
+                html += '</tr>';
+            };
+            
+            addRow('Marque', p => p.brand);
+            addRow('Type', p => getProductType(p.type));
+            addRow('Ville', p => p.city || 'Non spécifiée');
+            addRow('Prix', p => p.price);
+            if (productsToCompare.some(p => p.power || p.capacity)) {
+                const unit = productsToCompare.some(p => p.type === 'converter') ? 'VA' : (productsToCompare.some(p => p.type === 'battery') ? 'Ah' : 'W');
+                addRow(`Puissance (${unit})`, p => (p.power || p.capacity) || 'N/A');
+            }
+            if (productsToCompare.some(p => p.battery)) addRow('Batterie incluse', p => p.battery);
+            if (productsToCompare.some(p => p.voltage)) addRow('Tension batterie', p => p.voltage ? p.voltage + 'V' : 'N/A');
+            if (productsToCompare.some(p => p.inputVoltage)) addRow('Tension entrée', p => p.inputVoltage ? p.inputVoltage + 'V' : 'N/A');
+            if (productsToCompare.some(p => p.efficiency)) addRow('Efficacité', p => p.efficiency);
+            if (productsToCompare.some(p => p.warranty)) addRow('Garantie', p => p.warranty);
+            if (productsToCompare.some(p => p.dimensions)) addRow('Dimensions', p => p.dimensions);
+            if (productsToCompare.some(p => p.weight)) addRow('Poids', p => p.weight ? p.weight + ' kg' : 'N/A');
+            
+            addRow('Description', p => p.description);
+            
+            // Actions
+            html += '<tr><td><strong>Actions</strong></td>';
+            productsToCompare.forEach(product => {
+                html += `
+                    <td>
+                        <button class="btn-cart" data-id="${product.id}" style="margin: 5px;">
+                            <i class="fas fa-shopping-cart"></i> Ajouter
+                        </button>
+                        <button class="btn-whatsapp" data-id="${product.id}" style="margin: 5px;">
+                            <i class="fab fa-whatsapp"></i> Commander
+                        </button>
+                    </td>
+                `;
+            });
+            html += '</tr>';
+            html += '</tbody></table>';
+            return html;
+        }
+        
         function showProductDetailsModal(productId) {
             const product = products.find(p => p.id === productId);
             if (!product) return;
@@ -2469,7 +2566,6 @@
             document.getElementById('detail-product-image').src = product.image;
             document.getElementById('detail-product-description').textContent = product.description;
             
-            // Générer les spécifications
             const specsList = document.getElementById('detail-product-specs');
             specsList.innerHTML = '';
             
@@ -2494,22 +2590,17 @@
             if (product.weight) addSpec('Poids', `${product.weight} kg`);
             if (product.city) addSpec('Ville', product.city);
             
-            // Stocker l'ID du produit pour les boutons de la modal
             modal.setAttribute('data-product-id', product.id);
-            
-            // Afficher la modal
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
         
-        // Fermer la modal produit détaillée
         function closeProductDetailModal() {
             const modal = document.getElementById('product-detail-modal');
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
         
-        // Fonction pour ajouter/supprimer un produit de la comparaison
         function toggleCompare(productId) {
             const index = compareProducts.indexOf(productId);
             
@@ -2528,8 +2619,7 @@
             displayProducts();
             updateCompareBar();
         }
-
-        // Mettre à jour la barre de comparaison
+        
         function updateCompareBar() {
             const compareBar = document.getElementById('compare-bar');
             const compareItems = document.getElementById('compare-items');
@@ -2558,7 +2648,6 @@
                         </button>
                     `;
                     compareItems.appendChild(item);
-                    
                     item.querySelector('.remove-compare').addEventListener('click', function(e) {
                         e.stopPropagation();
                         const id = parseInt(this.dataset.id);
@@ -2567,8 +2656,7 @@
                 }
             });
         }
-
-        // Afficher la modal de comparaison
+        
         function showCompareModal() {
             if (compareProducts.length < 2) {
                 showNotification("Veuillez sélectionner au moins 2 produits à comparer.");
@@ -2579,74 +2667,7 @@
             content.innerHTML = generateCompareContent();
             modal.classList.add('active');
         }
-
-        // Générer le contenu de la comparaison
-        function generateCompareContent() {
-            const productsToCompare = compareProducts.map(id => products.find(p => p.id === id));
-            let html = '<table class="compare-table"><thead><tr><th>Caractéristiques</th>';
-            productsToCompare.forEach(product => {
-                html += `
-                    <th class="product-header">
-                        <img src="${product.image}" alt="${product.name}">
-                        <h4>${product.name}</h4>
-                        <div class="price">${product.price.toLocaleString('fr-FR')} FCFA</div>
-                    </th>
-                `;
-            });
-            html += '</tr></thead><tbody>';
-            
-            function addRow(label, key, unit = '') {
-                html += '<tr><td><strong>' + label + '</strong></td>';
-                productsToCompare.forEach(product => {
-                    let value = product[key] || 'N/A';
-                    if (value !== 'N/A' && unit) value += ` ${unit}`;
-                    html += `<td>${value}</td>`;
-                });
-                html += '</tr>';
-            }
-            
-            addRow('Marque', 'brand');
-            addRow('Type', 'type');
-            addRow('Ville', 'city');
-            addRow('Prix', 'price', 'FCFA');
-            if (productsToCompare.some(p => p.power)) {
-                const unit = productsToCompare.some(p => p.type === 'converter') ? 'VA' : 'W';
-                addRow('Puissance', 'power', unit);
-            }
-            if (productsToCompare.some(p => p.capacity)) addRow('Capacité', 'capacity', 'Ah');
-            if (productsToCompare.some(p => p.battery)) addRow('Batterie incluse', 'battery');
-            if (productsToCompare.some(p => p.voltage)) addRow('Tension batterie', 'voltage', 'V');
-            if (productsToCompare.some(p => p.inputVoltage)) addRow('Tension entrée', 'inputVoltage', 'V');
-            if (productsToCompare.some(p => p.efficiency)) addRow('Efficacité', 'efficiency');
-            if (productsToCompare.some(p => p.warranty)) addRow('Garantie', 'warranty');
-            if (productsToCompare.some(p => p.dimensions)) addRow('Dimensions', 'dimensions');
-            if (productsToCompare.some(p => p.weight)) addRow('Poids', 'weight', 'kg');
-            
-            html += '<tr><td><strong>Description</strong></td>';
-            productsToCompare.forEach(product => {
-                html += `<td>${product.description}</td>`;
-            });
-            html += '</tr>';
-            
-            html += '<tr><td><strong>Actions</strong></td>';
-            productsToCompare.forEach(product => {
-                html += `
-                    <td>
-                        <button class="btn-cart" data-id="${product.id}" style="margin: 5px;">
-                            <i class="fas fa-shopping-cart"></i> Ajouter
-                        </button>
-                        <button class="btn-whatsapp" data-id="${product.id}" style="margin: 5px;">
-                            <i class="fab fa-whatsapp"></i> Commander
-                        </button>
-                    </td>
-                `;
-            });
-            html += '</tr>';
-            html += '</tbody></table>';
-            return html;
-        }
-
-        // Ajouter au panier
+        
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             if (!product) return;
@@ -2667,8 +2688,7 @@
             updateCartDisplay();
             showNotification(`"${product.name}" ajouté au panier`);
         }
-
-        // Mettre à jour l'affichage du panier
+        
         function updateCartDisplay() {
             const cartCount = document.getElementById('cart-count');
             const cartItems = document.getElementById('cart-items');
@@ -2689,7 +2709,7 @@
                         <div>${item.type} - ${item.quantity} x ${item.price.toLocaleString('fr-FR')} FCFA</div>
                     </div>
                     <div class="cart-item-actions">
-                        <span>${(itemTotal).toLocaleString('fr-FR')} FCFA</span>
+                        <span>${itemTotal.toLocaleString('fr-FR')} FCFA</span>
                         <button class="remove-from-cart" data-id="${item.id}">
                             <i class="fas fa-trash"></i>
                         </button>
@@ -2708,8 +2728,7 @@
                 });
             });
         }
-
-        // Supprimer un article du panier
+        
         function removeFromCart(productId) {
             const index = cart.findIndex(item => item.id === productId);
             if (index !== -1) {
@@ -2718,8 +2737,7 @@
                 showNotification(`"${removedItem.name}" supprimé du panier`);
             }
         }
-
-        // Ouvrir WhatsApp pour commander
+        
         function openWhatsApp(product = null) {
             let message = "Bonjour, je souhaite commander:\n\n";
             if (product) {
@@ -2741,8 +2759,7 @@
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/22790143507?text=${encodedMessage}`, '_blank');
         }
-
-        // Afficher les appareils dans le simulateur
+        
         function displayAppliances() {
             const applianceList = document.getElementById('appliance-list');
             applianceList.innerHTML = '';
@@ -2805,8 +2822,7 @@
                 });
             });
         }
-
-        // Ajouter un nouvel appareil
+        
         function addNewAppliance() {
             const name = document.getElementById('appliance-name').value.trim();
             const power = parseInt(document.getElementById('appliance-power').value);
@@ -2827,43 +2843,40 @@
             displayAppliances();
             document.getElementById('appliance-name').focus();
         }
-
-        // Déterminer la tension système recommandée
+        
         function determineSystemVoltage(totalPower) {
             if (totalPower <= 1000) return 12;
             else if (totalPower <= 3000) return 24;
             else return 48;
         }
-
-        // Vérifier la compatibilité de tension
+        
         function isVoltageCompatible(productVoltage, recommendedVoltage) {
             if (!productVoltage) return false;
             const lowerBound = recommendedVoltage * 0.8;
             const upperBound = recommendedVoltage * 1.2;
             return productVoltage >= lowerBound && productVoltage <= upperBound;
         }
-
-        // Simuler et redimensionner le système
+        
         function simulerEtRedimensionner() {
             const region = document.getElementById('region').value;
             const ensoleillement = solarDataNiger.regions[region].sunHours;
             const rendement = solarDataNiger.systemEfficiency;
             const jours_autonomie = solarDataNiger.daysAutonomy;
             const facteur_securite = 1.3;
-
+            
             let consoWh = 0;
             let picW = 0;
             appliances.forEach(app => {
                 consoWh += app.power * app.hours * app.quantity;
                 if (app.simultane) picW += app.power * app.quantity;
             });
-
+            
             const tension_batterie = determineSystemVoltage(picW);
             const panneaux_W = Math.ceil(consoWh / (ensoleillement * rendement) * facteur_securite);
             const stockage_total = consoWh * jours_autonomie;
             const batterie_Ah = Math.ceil((stockage_total / tension_batterie) * facteur_securite);
             const onduleur_W = Math.ceil(picW * facteur_securite);
-
+            
             return {
                 conso_par_jour: consoWh,
                 panneaux_W,
@@ -2873,8 +2886,7 @@
                 ensoleillement
             };
         }
-
-        // Recommandation de kits
+        
         function recommanderKits(requiredPanelPower, requiredBatteryAh, requiredSystemVoltage, requiredConverterPower) {
             const kits = products.filter(p => p.type === 'kit');
             const kitsAvecScore = kits.map(kit => {
@@ -2897,8 +2909,7 @@
             kitsAvecScore.sort((a, b) => a.score - b.score);
             return kitsAvecScore.slice(0, 4);
         }
-
-        // Mettre à jour l'affichage des résultats
+        
         function updateResults() {
             if (appliances.length === 0) {
                 document.getElementById('recommendation-text').textContent = "Ajoutez des équipements pour obtenir une recommandation";
@@ -2913,7 +2924,7 @@
                 document.getElementById('recommended-kits').innerHTML = '<h4>Kits recommandés :</h4><p>Aucun kit trouvé.</p>';
                 return;
             }
-
+            
             const result = simulerEtRedimensionner();
             const region = document.getElementById('region').value;
             const sunHours = solarDataNiger.regions[region].sunHours;
@@ -2964,8 +2975,7 @@
             }
             document.getElementById('recommendation-text').textContent = "Voici les kits qui se rapprochent le plus de vos besoins :";
         }
-
-        // Afficher une notification
+        
         function showNotification(message) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
@@ -2978,8 +2988,7 @@
                 }, 500);
             }, 3000);
         }
-
-        // Validation du formulaire de commande
+        
         function validateOrderForm(formId) {
             const name = document.getElementById(`${formId}-name`).value.trim();
             const phone = document.getElementById(`${formId}-phone`).value.trim();
@@ -3005,7 +3014,6 @@
             return isValid;
         }
         
-        // Soumettre une commande
         function submitOrder(formId) {
             if (!validateOrderForm(formId)) return;
             const name = document.getElementById(`${formId}-name`).value.trim();
@@ -3023,12 +3031,11 @@
             showNotification("Commande enregistrée avec succès !");
         }
         
-        // Télécharger un bon de commande
         function downloadOrderForm() {
             showNotification("Bon de commande téléchargé");
             return false;
         }
-
+        
         // Initialisation
         window.onload = async function() {
             await loadSettings();
@@ -3159,7 +3166,6 @@
                 }
             });
             
-            // Gestion de la modal produit détaillée
             const productDetailModal = document.getElementById('product-detail-modal');
             const closeProductDetail = document.getElementById('close-product-detail');
             closeProductDetail.addEventListener('click', closeProductDetailModal);
@@ -3167,7 +3173,6 @@
                 if (e.target === this) closeProductDetailModal();
             });
             
-            // Boutons dans la modal produit
             document.getElementById('detail-cart-btn').addEventListener('click', function() {
                 const productId = parseInt(productDetailModal.getAttribute('data-product-id'));
                 addToCart(productId);
@@ -3185,7 +3190,6 @@
                 closeProductDetailModal();
             });
             
-            // Aide
             const helpModal = document.getElementById('help-modal');
             const helpLink = document.getElementById('help-link');
             const closeHelpModal = document.querySelector('.close-help-modal');
@@ -3215,4 +3219,3 @@
     </script>
 </body>
 </html>
-```
