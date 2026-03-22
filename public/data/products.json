@@ -14,17 +14,6 @@
       "voltage": ""
     },
     {
-      "power": 150,
-      "brand": "Felicity",
-      "price": 125000,
-      "name": "Panneau 150W Mono",
-      "type": "panel",
-      "id": 2,
-      "image": "/images/panneau-150w.jpg",
-      "warranty": "5 ans",
-      "description": "Panneau solaire monocristallin haute efficacité"
-    },
-    {
       "power": "",
       "brand": "sako solar",
       "price": 100000,
@@ -38,6 +27,17 @@
       "warranty": "No",
       "description": "batterie gel ",
       "voltage": ""
+    },
+    {
+      "power": 150,
+      "brand": "Felicity",
+      "price": 125000,
+      "name": "Panneau 150W Mono",
+      "type": "panel",
+      "id": 2,
+      "image": "/images/panneau-150w.jpg",
+      "warranty": "5 ans",
+      "description": "Panneau solaire monocristallin haute efficacité"
     },
     {
       "power": 1000,
@@ -92,19 +92,7 @@
       "description": "Batterie LiFePO₄ Resta Solar : légère, durable (10 à 15 ans), sans entretien, garantie 5 ans.\n\n"
     },
     {
-      "brand": "SAKO",
-      "price": 160000,
-      "name": "batterie gel 200 ah (sako)",
-      "capacity": 200,
-      "type": "battery",
-      "id": 4,
-      "image": "/img/Batterie gel 200.jpg",
-      "warranty": "no",
-      "description": "batterie gel",
-      "voltage": 12
-    },
-    {
-      "power": 2900,
+      "power": "",
       "converterPower": 5000,
       "batteryCapacity": 100,
       "brand": "Felicity ",
@@ -118,10 +106,19 @@
       "image": "/img/images (14).jpeg",
       "description": "kit solaire complet à 1.500.000F (5 panneaux de 580Wc double face avec support, 1 Onduleur de 3,5Kva-24Vdc, 1e batterie lithium de 5Kwh-24Vdc/100AH, câbles, accessoires et installation tout fini)",
       "voltage": 24,
-      "additionalImages": [
-        "/img/duo-max-250w.jpg",
-        "/img/images (14).jpeg"
-      ]
+      "additionalImages": []
+    },
+    {
+      "brand": "SAKO",
+      "price": 160000,
+      "name": "batterie gel 200 ah (sako)",
+      "capacity": 200,
+      "type": "battery",
+      "id": 4,
+      "image": "/img/Batterie gel 200.jpg",
+      "warranty": "no",
+      "description": "batterie gel",
+      "voltage": 12
     }
   ]
 }
