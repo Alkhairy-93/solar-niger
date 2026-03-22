@@ -80,18 +80,6 @@
       "description": "Alterne entre batterie 24v et courant Nigelec\n\n Utilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation."
     },
     {
-      "brand": "Resta solar",
-      "price": 1800000,
-      "name": "Lithium batterie life po4 ",
-      "inputVoltage": 48,
-      "capacity": 312,
-      "type": "battery",
-      "id": 9,
-      "image": "/img/restar lithuim battery.jpg",
-      "warranty": "5 ans",
-      "description": "Batterie LiFePO₄ Resta Solar : légère, durable (10 à 15 ans), sans entretien, garantie 5 ans.\n\n"
-    },
-    {
       "power": 2900,
       "converterPower": 5000,
       "batteryCapacity": 100,
@@ -119,6 +107,18 @@
       "warranty": "no",
       "description": "batterie gel",
       "voltage": 12
+    },
+    {
+      "brand": "Resta solar",
+      "price": 1800000,
+      "name": "Lithium batterie life po4 ",
+      "inputVoltage": 48,
+      "capacity": 312,
+      "type": "battery",
+      "id": 9,
+      "image": "/img/restar lithuim battery.jpg",
+      "warranty": "5 ans",
+      "description": "Batterie LiFePO₄ Resta Solar : légère, durable (10 à 15 ans), sans entretien, garantie 5 ans.\n\n"
     }
   ]
 }
