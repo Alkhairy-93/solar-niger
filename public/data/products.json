@@ -1,6 +1,17 @@
 {
   "products": [
     {
+      "power": 150,
+      "brand": "Felicity",
+      "price": 125000,
+      "name": "Panneau 150W Mono",
+      "type": "panel",
+      "id": 2,
+      "image": "/images/panneau-150w.jpg",
+      "warranty": "5 ans",
+      "description": "Panneau solaire monocristallin haute efficacité"
+    },
+    {
       "power": 3000,
       "brand": "Felicity",
       "price": 260000,
@@ -27,17 +38,6 @@
       "warranty": "No",
       "description": "batterie gel ",
       "voltage": ""
-    },
-    {
-      "power": 150,
-      "brand": "Felicity",
-      "price": 125000,
-      "name": "Panneau 150W Mono",
-      "type": "panel",
-      "id": 2,
-      "image": "/images/panneau-150w.jpg",
-      "warranty": "5 ans",
-      "description": "Panneau solaire monocristallin haute efficacité"
     },
     {
       "power": 1000,
@@ -92,7 +92,7 @@
       "description": "Batterie LiFePO₄ Resta Solar : légère, durable (10 à 15 ans), sans entretien, garantie 5 ans.\n\n"
     },
     {
-      "power": "",
+      "power": 2900,
       "converterPower": 5000,
       "batteryCapacity": 100,
       "brand": "Felicity ",
