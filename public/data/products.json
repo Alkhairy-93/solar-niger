@@ -12,19 +12,6 @@
       "description": "Panneau solaire monocristallin haute efficacité"
     },
     {
-      "power": 3000,
-      "brand": "Felicity",
-      "price": 260000,
-      "name": "ONDULEUR HYBRIDE 3KVA-24v (felicity)",
-      "inputVoltage": 24,
-      "type": "converter",
-      "id": 5,
-      "image": "/img/6-a5ec_1 - Copie.jpg",
-      "warranty": "NO",
-      "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
-      "voltage": ""
-    },
-    {
       "power": "",
       "brand": "SAKO",
       "price": 1150000,
@@ -36,6 +23,19 @@
       "warranty": "NO",
       "description": " longévité allant jusqu’à 15 ans, charge rapide et stable,  faible taux d’auto-décharge , écologique et sans entretien est idéale pour les applications solaires domestiques et commerciales.\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.",
       "voltage": 48
+    },
+    {
+      "power": 3000,
+      "brand": "Felicity",
+      "price": 260000,
+      "name": "ONDULEUR HYBRIDE 3KVA-24v (felicity)",
+      "inputVoltage": 24,
+      "type": "converter",
+      "id": 5,
+      "image": "/img/6-a5ec_1 - Copie.jpg",
+      "warranty": "NO",
+      "description": "Alterne entre batterie 24v et courant Nigelec\n\nUtilisez le simulateur ci-dessous pour vérifier la compatibilité de vos appareils selon votre consommation.\n",
+      "voltage": ""
     },
     {
       "power": 1000,
